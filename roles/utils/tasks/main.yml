@@ -1,0 +1,7 @@
+---
+- name: Install required utilities
+  apt: pkg={{ item }} update-cache=yes state=present
+  with_items:
+    - rsync
+    - htop
+    - unzip

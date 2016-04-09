@@ -1,0 +1,9 @@
+---
+- name: Install Apache web server and PHP
+  apt: pkg={{ item }} update-cache=yes state=present
+  with_items:
+    - apache2
+    - mysql-server
+    - php5
+    - php5-mysql
+    - php5-gd

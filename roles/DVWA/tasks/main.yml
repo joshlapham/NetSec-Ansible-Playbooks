@@ -1,0 +1,11 @@
+---
+- name: Download Damn Vulnerable Web Application
+  get_url:
+    url: https://github.com/RandomStorm/DVWA/archive/v1.9.zip
+    dest: /tmp/dvwa-1.9.zip
+
+- name: Unarchive Damn Vulnerable Web Application
+  unarchive:
+    src: /tmp/dvwa-1.9.zip
+    dest: /tmp
+    copy: no
