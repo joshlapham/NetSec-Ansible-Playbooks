@@ -18,6 +18,17 @@
 - name: Move Damn Vulnerable Web Application files to /var/www
   command: /bin/mv /tmp/DVWA-1.9 /var/www
 
+- name: Cleanup downloaded .zip file
+  file:
+    path: /tmp/dvwa-1.9.zip
+    state: absent
+
+- name: Modify MySQL password in Damn Vulnerable Web Application configuration file
+  lineinfile:
+    dest: /var/www/config/config.inc.php
+    regexp: "$_DVWA[ 'db_password' ] = 'p@ssw0rd';"
+    line: "$_DVWA[ 'db_password' ] = '';"
+    
 - name: Set permissions for /var/www
   file:
     path: /var/www
