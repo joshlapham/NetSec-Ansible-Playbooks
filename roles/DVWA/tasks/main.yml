@@ -24,3 +24,14 @@
     owner: www-data
     group: www-data
     recurse: yes
+
+- name: Modify php.ini for Apache
+  lineinfile:
+    dest: /etc/php5/apache2/php.ini
+    regexp: "allow_url_include = Off"
+    line: "allow_url_include = On"
+
+- name: Restart Apache
+  service:
+    name: apache2
+    state: restarted
