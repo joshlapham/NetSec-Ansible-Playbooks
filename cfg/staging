@@ -1,0 +1,2 @@
+[target]
+192.168.2.10 ansible_ssh_user=vagrant
