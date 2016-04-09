@@ -2,6 +2,6 @@
 - name: Setup Damn Vulnerable Web Application on a fresh server instance
   hosts: target
   roles:
-    # - utils
-    # - DVWA
+    - utils
     - lamp
+    - DVWA

@@ -9,3 +9,11 @@
     src: /tmp/dvwa-1.9.zip
     dest: /tmp
     copy: no
+
+- name: Remove default /var/www
+  file:
+    path: /var/www
+    state: absent
+
+- name: Move Damn Vulnerable Web Application files to /var/www
+  command: /bin/mv /tmp/DVWA-1.9 /var/www
