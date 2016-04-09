@@ -17,3 +17,10 @@
 
 - name: Move Damn Vulnerable Web Application files to /var/www
   command: /bin/mv /tmp/DVWA-1.9 /var/www
+
+- name: Set permissions for /var/www
+  file:
+    path: /var/www
+    owner: www-data
+    group: www-data
+    recurse: yes
